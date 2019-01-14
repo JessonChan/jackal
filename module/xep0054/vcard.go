@@ -95,7 +95,7 @@ func (x *VCard) getVCard(vCard xmpp.XElement, iq *xmpp.IQ, stm stream.C2S) {
 		stm.SendElement(iq.InternalServerError())
 		return
 	}
-	log.Infof("retrieving vcard... (%s/%s)", toJID.Node(), toJID.Resource())
+	log.Infof("retrieving vcard... (%s/%s)", stm.Username(), stm.Resource())
 
 	resultIQ := iq.ResultIQ()
 	if resElem != nil {
